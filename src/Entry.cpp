@@ -48,11 +48,6 @@ DWORD WINAPI Entry(LPVOID hModule) {
         //change 2 enums passed to GJRewardObject::create so we get the meltdown cube instead
         patch(gd::base + 0x101360, "\x42", nullptr, 1);
         patch(gd::base + 0x101364, "\x09", nullptr, 1);
-
-        AllocConsole();
-        std::cout.rdbuf(std::ofstream{ "CONOUT$" }.rdbuf());
-
-        std::cout << "hi";
     }
     else {
     exit:
